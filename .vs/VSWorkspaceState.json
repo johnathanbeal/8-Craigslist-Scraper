@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\CraigslistScraper",
+    "\\src\\CraigslistScraper\\Controllers",
+    "\\src\\CraigslistScraper\\Craigslist",
+    "\\src\\CraigslistScraper\\Credentials",
+    "\\src\\CraigslistScraper\\SMTP",
+    "\\test"
+  ],
+  "PreviewInSolutionExplorer": false
+}
