@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fcs30rFp0e5FQf3nQTkuA9pqU/f9/AwLphesRWUVV1aXScAgnyBwq+dQsPZeWKnUYjZRAHlK4Ho2AjSrZjxitw==",
+  "dgSpecHash": "uFR80m67ojBPaL6bCV7U+Bo4ZfwAV4Diw+t4qZ6ZbWgN/TDp7iTQVv6ojBFoEIEnzrjLWT5lf2z/dk0rqOpAcw==",
   "success": true,
-  "projectFilePath": "C:\\github\\CraigslistScraper\\test\\CraigslistScraper.Tests\\CraigslistScraper.Tests.csproj",
+  "projectFilePath": "C:\\Github\\CraigslistScraper\\test\\CraigslistScraper.Tests\\CraigslistScraper.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jbeal\\.nuget\\packages\\amazon.lambda.core\\1.1.0\\amazon.lambda.core.1.1.0.nupkg.sha512",
     "C:\\Users\\jbeal\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.0.1\\amazon.lambda.serialization.systemtextjson.2.0.1.nupkg.sha512",

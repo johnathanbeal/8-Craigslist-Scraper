@@ -159,11 +159,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
+      "projectUniqueName": "C:\\Github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
       "projectName": "CraigslistScraper",
-      "projectPath": "C:\\github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
+      "projectPath": "C:\\Github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
       "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-      "outputPath": "C:\\github\\CraigslistScraper\\src\\CraigslistScraper\\obj\\",
+      "outputPath": "C:\\Github\\CraigslistScraper\\src\\CraigslistScraper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

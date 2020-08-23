@@ -20,7 +20,7 @@ namespace CraigslistScraper.SMTP
                 string from = "mr.beal@protonmail.com";
 
                 MailMessage mail = new MailMessage(from, to);
-                SmtpClient SmtpServer = new SmtpClient("smtp.protonmail.com");
+                SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                 //mail.From = new MailAddress("jbeal.i360@gmail.com");
 
