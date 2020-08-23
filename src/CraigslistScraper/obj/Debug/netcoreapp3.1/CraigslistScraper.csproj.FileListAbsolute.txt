@@ -1,0 +1,12 @@
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.csprojAssemblyReference.cache
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.csproj.CoreCompileInputs.cache
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.AssemblyInfoInputs.cache
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.AssemblyInfo.cs
+C:\Github\CraigslistScraper\src\CraigslistScraper\bin\Debug\netcoreapp3.1\CraigslistScraper.deps.json
+C:\Github\CraigslistScraper\src\CraigslistScraper\bin\Debug\netcoreapp3.1\CraigslistScraper.runtimeconfig.json
+C:\Github\CraigslistScraper\src\CraigslistScraper\bin\Debug\netcoreapp3.1\CraigslistScraper.runtimeconfig.dev.json
+C:\Github\CraigslistScraper\src\CraigslistScraper\bin\Debug\netcoreapp3.1\CraigslistScraper.dll
+C:\Github\CraigslistScraper\src\CraigslistScraper\bin\Debug\netcoreapp3.1\CraigslistScraper.pdb
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.dll
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.pdb
+C:\Github\CraigslistScraper\src\CraigslistScraper\obj\Debug\netcoreapp3.1\CraigslistScraper.genruntimeconfig.cache

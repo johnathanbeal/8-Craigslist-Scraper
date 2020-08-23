@@ -14,15 +14,15 @@ namespace CraigslistScraper.Tests
     public class FunctionTest
     {
         [Fact]
-        public void TestToUpperFunction()
+        public async Task TestToUpperFunction()
         {
 
             // Invoke the lambda function and confirm the string was upper cased.
             var function = new Function();
             var context = new TestLambdaContext();
-            var upperCase = function.FunctionHandler("hello world", context);
-
-            Assert.Equal("HELLO WORLD", upperCase);
+            var resultMessage = await function.FunctionHandler();
+            Console.WriteLine(resultMessage);
+            Assert.Equal("The smtp server was changed to protonmail", resultMessage);
         }
     }
 }

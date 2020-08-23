@@ -7,7 +7,9 @@
     "\\src\\CraigslistScraper\\Craigslist",
     "\\src\\CraigslistScraper\\Credentials",
     "\\src\\CraigslistScraper\\SMTP",
-    "\\test"
+    "\\test",
+    "\\test\\CraigslistScraper.Tests"
   ],
+  "SelectedNode": "\\src\\CraigslistScraper\\Function.cs",
   "PreviewInSolutionExplorer": false
 }

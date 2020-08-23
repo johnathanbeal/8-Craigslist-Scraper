@@ -2,8 +2,8 @@ namespace CraigslistScraper.Credentials
 {
     public class EmailAuthenticationInfo
     {
-        public string Username { get { return "jbeal.i360@gmail.com"; } }
+        public string Username { get { return "AKIAQUTFCN7QWVY5ICM5"; } }
         
-        public string Password { get { return "92JkpQVzC8j4"; } }
+        public string Password { get { return "BCHEtZOoHyML8W4FxmVvJwjF+sF8yt2Pr8LlwOqIiuOC"; } }
     }
 }
