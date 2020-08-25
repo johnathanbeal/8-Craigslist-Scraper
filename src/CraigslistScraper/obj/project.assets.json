@@ -32,38 +32,6 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {}
         }
       }
-    },
-    ".NETCoreApp,Version=v3.1/linux-x64": {
-      "Amazon.Lambda.Core/1.1.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
-        }
-      },
-      "Amazon.Lambda.Serialization.SystemTextJson/2.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Amazon.Lambda.Core": "1.1.0"
-        },
-        "compile": {
-          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
-        }
-      },
-      "HtmlAgilityPack/1.11.24": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -224,11 +192,6 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "linux-x64": {
-        "#import": []
       }
     }
   }
