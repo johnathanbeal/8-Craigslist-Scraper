@@ -16,15 +16,12 @@ namespace CraigslistScraper.SMTP
 
             try
             {
-                string to = "jbeal@i-360.com";
-                string from = "mr.beal@protonmail.com";
+                string to = "johnathanbeal@gmail.com";
+                string from = "jbeal.i360@gmail.com";
 
                 MailMessage mail = new MailMessage(from, to);
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
-                //mail.From = new MailAddress("jbeal.i360@gmail.com");
-
-                //mail.To.Add("johnathanbeal@gmail.com");
                 mail.Subject = "Daily Apartments Notification";
                 var apartments = await searchApartments.SearchApartmentsAsync(new string[] { "Arlington", "750" });
                 string _apartments = string.Join(Environment.NewLine, apartments.ToArray());

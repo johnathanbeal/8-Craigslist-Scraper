@@ -32,6 +32,38 @@
           "lib/netstandard2.0/HtmlAgilityPack.dll": {}
         }
       }
+    },
+    ".NETCoreApp,Version=v3.1/linux-x64": {
+      "Amazon.Lambda.Core/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Amazon.Lambda.Core.dll": {}
+        }
+      },
+      "Amazon.Lambda.Serialization.SystemTextJson/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.Lambda.Core": "1.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Amazon.Lambda.Serialization.SystemTextJson.dll": {}
+        }
+      },
+      "HtmlAgilityPack/1.11.24": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -127,11 +159,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
+      "projectUniqueName": "C:\\github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
       "projectName": "CraigslistScraper",
-      "projectPath": "C:\\Github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
+      "projectPath": "C:\\github\\CraigslistScraper\\src\\CraigslistScraper\\CraigslistScraper.csproj",
       "packagesPath": "C:\\Users\\jbeal\\.nuget\\packages\\",
-      "outputPath": "C:\\Github\\CraigslistScraper\\src\\CraigslistScraper\\obj\\",
+      "outputPath": "C:\\github\\CraigslistScraper\\src\\CraigslistScraper\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -192,6 +224,11 @@
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "linux-x64": {
+        "#import": []
       }
     }
   }
