@@ -12,18 +12,18 @@ namespace CraigslistScraper
 {
     public class Function
     {
-        
+
         /// <summary>
-        /// A simple function that takes a string and does a ToUpper
+        /// A simple function that sends an email
         /// </summary>
-        /// <param name="input"></param>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        /// <returns>
+        /// "The email was sent"
+        /// </returns>
         public async Task<string> FunctionHandler()
         {
             Email email = new Email();
             await email.SendEmail();
-            return "The smtp server was changed to protonmail";
+            return "The email was sent";
         }
     }
 }

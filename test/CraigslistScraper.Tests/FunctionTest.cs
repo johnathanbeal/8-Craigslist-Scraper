@@ -22,7 +22,7 @@ namespace CraigslistScraper.Tests
             var context = new TestLambdaContext();
             var resultMessage = await function.FunctionHandler();
             Console.WriteLine(resultMessage);
-            Assert.Equal("The smtp server was changed to protonmail", resultMessage);
+            Assert.Equal("The email was sent", resultMessage);
         }
     }
 }
