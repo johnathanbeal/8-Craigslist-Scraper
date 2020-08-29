@@ -3,5 +3,5 @@ Broilerplate AWS Lambda documentation that may be helpful can be found at https:
 
 # Best of Craigslist!
 
-![Best of Craigslist](BestOfCL.png)
+![Best of Craigslist](bestOfCL.PNG)
 
