@@ -16,13 +16,11 @@ namespace CraigslistScraper.Tests
         [Fact]
         public async Task TestToUpperFunction()
         {
-
-            // Invoke the lambda function and confirm the string was upper cased.
             var function = new Function();
             var context = new TestLambdaContext();
             var resultMessage = await function.FunctionHandler();
-            Console.WriteLine(resultMessage);
-            Assert.Equal("The email was sent", resultMessage);
+            Console.WriteLine(resultMessage.Message);
+            Assert.Equal("The email was sent", resultMessage.Message);
         }
     }
 }

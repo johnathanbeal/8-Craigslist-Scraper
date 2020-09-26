@@ -30,8 +30,8 @@ namespace CraigslistScraper.SMTP
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
                 SmtpServer.Credentials = new System.Net.NetworkCredential(
-                    Environment.GetEnvironmentVariable("SENDER_EMAIL"), 
-                    Environment.GetEnvironmentVariable("SENDER_PASSWORD"));
+                    Environment.GetEnvironmentVariable("SENDER_EMAIL") ?? "jbeal.i360@gmail.com", 
+                    Environment.GetEnvironmentVariable("SENDER_PASSWORD") ?? "");
 
                 SmtpServer.EnableSsl = true;
 
@@ -41,7 +41,7 @@ namespace CraigslistScraper.SMTP
                 var emailStatus = new EmailStatus();
                 emailStatus.WasSent = true;
                 emailStatus.Message = "email sent";
-                return await emailStatus;
+                return emailStatus;
             }
             catch (Exception ex)
             {
@@ -49,7 +49,7 @@ namespace CraigslistScraper.SMTP
                 emailFailStatus.WasSent = true;
                 emailFailStatus.Message = "email was not sent, exception is:" + ex.ToString();
 
-                return await emailFailStatus;
+                return emailFailStatus;
                 
             }
         }

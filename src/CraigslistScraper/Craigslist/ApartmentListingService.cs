@@ -10,7 +10,7 @@ namespace CraigslistScraper.Craigslist
     public class ApartmentListingService
     {
 
-        public async Task<List<string>> SearchApartmentsAsync(string city = "Arlington", int rentAmount = 750 ) 
+        public async Task<List<string>> SearchApartmentsAsync(string city = "Arlington", string rentAmount = "750" ) 
         {
             var listingHttpClient = new HttpClient();
             var listingResponse = await listingHttpClient.GetAsync("https://washingtondc.craigslist.org/search/nva/apa?query=" + city + "&min_price=1&max_price=" + rentAmount + "&availabilityMode=0&sale_date=all+dates");
@@ -27,7 +27,7 @@ namespace CraigslistScraper.Craigslist
 
             foreach (var listingNode in listingNodes)
             {
-                var listingOuterhtml = listing.OuterHtml;
+                var listingOuterhtml = listingNode.OuterHtml;
 
                 if (!listingOuterhtml.Contains("https://washingtondc.craigslist.org/nva/"))
                     continue;
