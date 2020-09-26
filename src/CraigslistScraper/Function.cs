@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CraigslistScraper.Craigslist;
 using CraigslistScraper.SMTP;
 using Amazon.Lambda.Core;
 
@@ -18,12 +19,16 @@ namespace CraigslistScraper
         /// </summary>
         /// <returns>
         /// "The email was sent"
+        /// dotnet lambda invoke-function MyFunction --payload "How Now Brown Cow"
         /// </returns>
-        public async Task<string> FunctionHandler()
+        public async Task<EmailStatus> FunctionHandler()
         {
-            Email email = new Email();
-            await email.SendEmail();
-            return "The email was sent";
+            var apartmentListingService = new ApartmentListingService();
+            var apartmentListingContent = await apartmentListingService.SearchApartmentsAsync();
+            var body = string.Join(Environment.NewLine, apartmentListingContent.ToArray());
+
+            var emailStatus = await new Email().SendEmail(body);
+            return emailStatus;
         }
     }
 }

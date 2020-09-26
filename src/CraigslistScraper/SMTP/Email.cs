@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using System.Net.Mail;
-using CraigslistScraper.Credentials;
+//using CraigslistScraper.Credentials;
 using CraigslistScraper.Craigslist;
 
 
@@ -9,11 +9,9 @@ namespace CraigslistScraper.SMTP
 {
     public class Email
     {
-        public async Task<string> SendEmail()
+        public async Task<EmailStatus> SendEmail(string htmlBody)
         {
-            EmailAuthenticationInfo emailAuthenticationInfo = new EmailAuthenticationInfo();
-            SearchApartments searchApartments = new SearchApartments();
-
+            //EmailAuthenticationInfo emailAuthenticationInfo = new EmailAuthenticationInfo();
             try
             {
                 string to = "johnathanbeal@gmail.com";
@@ -23,28 +21,43 @@ namespace CraigslistScraper.SMTP
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                 mail.Subject = "Daily Apartments Notification";
-                var apartments = await searchApartments.SearchApartmentsAsync(new string[] { "Arlington", "750" });
-                string _apartments = string.Join(Environment.NewLine, apartments.ToArray());
+                
 
-                mail.Body = _apartments;
+                mail.Body = htmlBody;
                 mail.IsBodyHtml = true;
 
                 SmtpServer.Host = "smtp.gmail.com";
                 SmtpServer.Port = 587;
                 SmtpServer.UseDefaultCredentials = false;
-                SmtpServer.Credentials = new System.Net.NetworkCredential(emailAuthenticationInfo.Username, emailAuthenticationInfo.Password);
+                SmtpServer.Credentials = new System.Net.NetworkCredential(
+                    Environment.GetEnvironmentVariable("SENDER_EMAIL"), 
+                    Environment.GetEnvironmentVariable("SENDER_PASSWORD"));
+
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
 
                 Console.WriteLine("email sent");
-                return "email sent";
+                var emailStatus = new EmailStatus();
+                emailStatus.WasSent = true;
+                emailStatus.Message = "email sent";
+                return await emailStatus;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
-                return "email failed: exception of : " + ex;
+                var emailFailStatus = new EmailStatus();
+                emailFailStatus.WasSent = true;
+                emailFailStatus.Message = "email was not sent, exception is:" + ex.ToString();
+
+                return await emailFailStatus;
+                
             }
         }
     }
+}
+
+public class EmailStatus
+{
+    public bool WasSent { get; set; }
+    public string Message { get; set; }
 }
