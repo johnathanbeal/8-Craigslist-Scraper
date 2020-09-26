@@ -27,12 +27,17 @@ namespace CraigslistScraper.Craigslist
 
             foreach (var listingNode in listingNodes)
             {
-                var listingOuterhtml = listingNode.OuterHtml;
+                //Console.WriteLine("list node id: " + listingNode);
 
-                if (!listingOuterhtml.Contains("https://washingtondc.craigslist.org/nva/"))
+                var listingOuterHtml = listingNode.OuterHtml;
+                //Console.WriteLine("listingOuterhtml " + listingOuterHtml);
+
+                if (!listingOuterHtml.Contains("https://washingtondc.craigslist.org/nva/"))
                     continue;
 
-                var listingHref = listingOuterhtml.Substring(listingOuterhtml.IndexOf("https:"));
+                var listingHref = listingOuterHtml.Substring(listingOuterHtml.IndexOf("https:"));
+                //Console.WriteLine("listingHref is " + listingHref);
+
                 var removeAfterIndex = listingHref.IndexOf("\"");
                 if (removeAfterIndex > 0)
                     listingHref = listingHref.Substring(0, removeAfterIndex);
@@ -40,23 +45,37 @@ namespace CraigslistScraper.Craigslist
                 var client = new HttpClient();
 
                 var response = await client.GetAsync(listingHref);
+                //Console.WriteLine("response is " + response);
 
                 var pageContents = await response.Content.ReadAsStringAsync();
+                //Console.WriteLine("pagecontents is " + pageContents);
 
                 var pageDocument = new HtmlDocument();
                 pageDocument.LoadHtml(pageContents);
 
                 var price = pageDocument.DocumentNode.SelectSingleNode("//span[contains(@class, 'price')]");
-                var postTitle = pageDocument.DocumentNode.SelectSingleNode("(//h2[contains(@class, 'postingtitle')]//span[@id='titletextonly'])");
+                Console.WriteLine("price is " + price.InnerText);
+
+                //var postTitle = pageDocument.DocumentNode.SelectSingleNode("(//h2[contains(@class, 'postingtitle')]//span[@id='titletextonly'])");
+                //Console.WriteLine("postTitle is " + postTitle.InnerText);
+
                 var userbody = pageDocument.DocumentNode.SelectSingleNode(
                     "(//section[contains(@class, 'userbody')]//section[@id = 'postingbody'])");
-                var qrCode = pageDocument.DocumentNode.SelectSingleNode("//p[contains(@class, 'print-qrcode-label')]");
-                var displayText = userbody.InnerText.Replace(qrCode.InnerText, "");
+                //Console.WriteLine("userbody is " + userbody);
 
-                var emailBodyBuilder = 
+                //Console.WriteLine("Posttitle is " + postTitle.InnerText.Trim());
+
+                var qrCode = pageDocument.DocumentNode.SelectSingleNode("//p[contains(@class, 'print-qrcode-label')]");
+                Console.WriteLine("qrcode is " + qrCode);
+
+                var displayText = userbody.InnerText.Replace(qrCode.InnerText, "");
+                Console.WriteLine("displayText is " + displayText.Trim());
+
+                //string emailBodyBuilder = "Something";
+                string emailBodyBuilder = 
                     "Listing " + (listingIndex + 1) + Environment.NewLine + "<br>" +
                     "Price : " + price.InnerText + Environment.NewLine + "<br>" +
-                    "Post Title : " + postTitle.InnerText.Trim() + Environment.NewLine + "<br>" +
+                    //"Post Title : " + postTitle.InnerText.Trim() + Environment.NewLine + "<br>" +
                     displayText.Trim() + Environment.NewLine + "<br>" +
                     "\r\n" + "<br>";
 
